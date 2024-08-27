@@ -11,10 +11,17 @@ type UserAccount struct {
 	Email     string `json:"email"`
 	FirstName string `json:"firstName"`
 	LastName  string `json:"lastName"`
-	Password  string `json:"password"`
+	PasswordHash  string `json:"password"`
 }
 
-func NewUser() *UserAccount {
+type CreateUserAccount struct {
+	Email     string `json:"email"`
+	FirstName string `json:"firstName"`
+	LastName  string `json:"lastName"`
+	PasswordHash  string `json:"password"`
+}
+
+func NewUserAccount() *UserAccount {
 	return &UserAccount{
 		CreatedAt: time.Now().UnixMilli(),
 		UpdatedAt: time.Now().UnixMilli(),

@@ -8,4 +8,5 @@ import (
 
 func DefineRoutes() {
 	http.HandleFunc("/", handlers.HandleHome)
+	http.HandleFunc("/user", handlers.HandleUser)
 }
